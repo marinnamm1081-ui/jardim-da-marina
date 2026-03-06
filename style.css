@@ -60,6 +60,11 @@ nav, a:hover{
    border-radius: 10px; /* Aredonda os cantos de um elemento */
    box-shadow: 0px 0px 10px rgba(54, 27, 39, 0.406) ;  /* Sombra em um elemento */
 }
+strong{
+    font-size: 20px;
+    color: black;
+    
+}
 
 footer{
     text-align: center;
