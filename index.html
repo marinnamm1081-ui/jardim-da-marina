@@ -7,6 +7,7 @@
     <title>Jardim da Marina</title>
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <header>
@@ -14,13 +15,17 @@
         <p>Plantas Medicinais • Natureza • Sabedoria Natural</p>
         </header>
 
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="plantas.html" target="_blank">Plantas</a>
-            <a href="https://www.emporiodaterra.com/chas-ervas?srsltid=AfmBOoqAqjITkmD9SKovIS__t5B-tKYEFJyWUJcgzrHyVE0KC7CGLfy-" target="_blank">Chás</a>
-            <a href="onzehoras.html" target="_blank">Poesias</a>
-            <a href="https://www.instagram.com/mary_martins42/" target="_blank">Contato</a>
+        
+
+        <nav onclick="nav()">
+            <a href="index.html" onclick="boasVindas()">Início</a>
+            <a href="plantas.html" target="_blank" onclick="plantas()">Plantas</a>
+            <a href="https://www.emporiodaterra.com/chas-ervas?srsltid=AfmBOoqAqjITkmD9SKovIS__t5B-tKYEFJyWUJcgzrHyVE0KC7CGLfy-" target="_blank" onclick="chas()">Chás</a>
+            <a href="onzehoras.html" target="_blank" onclick="poesia()">Poesias</a>
+            <a href="https://www.instagram.com/mary_martins42/" target="_blank" onclick="contato()">Contato</a>
             </nav>
+            <p id="mensagem"></p>
+
             <div class="container">
 
                 <div class="card">
@@ -43,22 +48,23 @@
                 
                 </div>
                 
-                <div class="card">
+                <div id="descobrirPlanta">
                 <h2>🔎 Descubra sua planta</h2>
                 
                 <p>Seu ambiente tem:</p>
                 
-                <label><input type="checkbox"> Muito sol</label><br>
-                <label><input type="checkbox"> Meia sombra</label><br>
-                <label><input type="checkbox"> Sombra</label><br><br>
+                <label><input type="checkbox" id="sol"> Muito sol</label><br>
+                <label><input type="checkbox" id="msombra"> Meia sombra</label><br>
+                <label><input type="checkbox" id="sombra"> Sombra</label><br><br>
                 
                 <p>Você quer uma planta para:</p>
                 
-                <label><input type="checkbox"> Chá</label><br>
-                <label><input type="checkbox"> Medicinal</label><br>
-                <label><input type="checkbox"> Decoração</label><br><br>
+                <label><input type="checkbox" id="cha"> Chá</label><br>
+                <label><input type="checkbox" id="medicinal"> Medicinal</label><br>
+                <label><input type="checkbox" id="decoracao"> Decoração</label><br><br>
                 
-                <button>Descobrir planta</button>
+                <button onclick="descobrirPlanta()">Descobrir planta</button>
+                <p id="resultado"></p>
                 
                 </div>
                 
@@ -104,6 +110,73 @@
                         <input type="reset" value="Limpar">
                     </p>
                 </form>
+
+                <script>
+                    function descobrirPlanta() {
+                        var sol = document.getElementById('sol').checked
+                        var msombra = document.getElementById('msombra').checked
+                        var sombra = document.getElementById('sombra').checked
+
+                        var cha = document.getElementById('cha').checked
+                        var medicinal = document.getElementById('medicinal').checked
+                        var decoracao = document.getElementById('decoracao').checked
+
+                        var resultado = document.getElementById('resultado')
+
+                        if(sol && cha){
+                            resultado.innerHTML = 'Planta sugerida: Hortelã'
+                            resultado.style.background = 'pink'
+                            resultado.style.borderRadius = '50px'
+                            resultado.style.padding = '30px'
+
+                        } else if(sol && medicinal){
+                            resultado.innerHTML = 'Planta sugerida: Pata de vaca'
+                            resultado.style.background = 'pink'
+                            resultado.style.borderRadius = '50px'
+                            resultado.style.padding = '30px'
+
+                        } else if(msombra && decoracao){
+                            resultado.innerHTML = 'Planta sugerida: Gerânio'
+                            resultado.style.background = 'pink'
+                            resultado.style.borderRadius = '50px'
+                            resultado.style.padding = '30px'
+
+                        }else if(sombra && decoracao){
+                            resultado.innerHTML = 'Planta sugerida: Lírio da paz'
+                            resultado.style.background = 'pink'
+                            resultado.style.borderRadius = '50px'
+                            resultado.style.padding = '30px'
+                            
+                        }  else  if(msombra && medicinal) {
+                            resultado.innerHTML = 'Planta sugerida: Babosa'
+                            resultado.style.background = 'pink'
+                            resultado.style.borderRadius = '50px'
+                            resultado.style.padding = '30px'
+
+                        }else if(msombra && cha){
+                            resultado.innerHTML = 'Planta sugerida: Boldo'
+                            resultado.style.background = 'pink'
+                            resultado.style.borderRadius = '50px'
+                            resultado.style.padding = '30px'
+
+                        }else if(sombra && cha){
+                            resultado.innerHTML = 'Planta sugerida: Erva-cidreira'
+                            resultado.style.background = 'pink'
+                            resultado.style.borderRadius = '50px'
+                            resultado.style.padding = '30px'
+
+                        } else{
+                            resultado.innerHTML = 'Planta sugerida: Roseira'
+                            resultado.style.background = 'pink'
+                            resultado.style.borderRadius = '50px'
+                            resultado.style.padding = '30px'
+                        }
+
+                    }
+                    
+
+                    
+                </script>
                 </footer>    
             
 </body>
