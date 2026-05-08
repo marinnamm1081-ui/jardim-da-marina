@@ -13,6 +13,8 @@
     <header>
         <h1>🌿 Jardim da Marina</h1>
         <p>Plantas Medicinais • Natureza • Sabedoria Natural</p>
+        <button onclick="modoEscuro()" id="btn"> Modo escuro 🌙</button>
+       
         </header>
 
         
@@ -172,9 +174,24 @@
                             resultado.style.padding = '30px'
                         }
 
+                    } 
+                    function modoEscuro(){
+                        document.body.classList.toggle('dark') /* Pega o body da página */
+
+                        let botao = document.getElementById('btn') // Cria uma variável chamada botão
+
+                        if(document.body.classList.contains('dark')){ // Varifica: ä página no modo escuro?""
+                            botao.innerHTML = 'Modo claro ☀️' // Muda o texto do botão para "modo claro"
+
+                        }else{
+                            botao.innerHTML = 'Modo escuro 🌙' /* Se não estiver no modo escuro. volta o texto para 
+                            "Modo escuro".*/
+                        }
+
                     }
                     
-
+                /* A classe DARK no CSS muda o visual para modo escuro.
+                Fundo escuro + texto branco.*/
                     
                 </script>
                 </footer>    
