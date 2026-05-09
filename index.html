@@ -67,10 +67,32 @@
                 
                 <button onclick="descobrirPlanta()">Descobrir planta</button>
                 <p id="resultado"></p>
+                <img src="geranio.png" id="foto" alt="foto" style="display: none;" width="300px"> 
+            
                 
                 </div>
+              
+                    
+                    <button id="botao" onclick="mostrar()">Curiosidade</button>
+                    <br>
+                    <div id="conteudoSurpresa">
+                    <img id="lantana" src="lantana.png" alt="lantana">
+                    <p id="msg">
+                        <strong>O "Semáforo" das Flores</strong> (A maior curiosidade!) <br>
+                        Você já reparou que um mesmo cacho de Lantana tem flores de várias <br>
+                        cores (amarelo, laranja e vermelho)? Isso não é apenas estética: <br>
+                        <h2>Ímã de Borboletas</h2> 
+                        A Lantana é considerada uma das melhores plantas do mundo para atrair
+                         borboletas. O formato da flor em "guarda-chuva" serve como uma plataforma 
+                         de pouso perfeita para elas.
+
+
+                    </p>
+                </div>
+               
                 
                 <div class="card">
+
                 <h2>📚 Biblioteca de Plantas</h2>
                 
                 <ul>
@@ -81,6 +103,9 @@
                 </ul>
                 
                 </div>
+                
+                
+               
                 
                 <div class="card">
                 
@@ -124,51 +149,82 @@
                         var decoracao = document.getElementById('decoracao').checked
 
                         var resultado = document.getElementById('resultado')
+                        var img =document.getElementById('foto')
+                    
 
                         if(sol && cha){
+                            img.src = 'hortela.png'
+                            img.style.display = 'block'
+                        
+                            
                             resultado.innerHTML = 'Planta sugerida: Hortelã'
                             resultado.style.background = 'pink'
                             resultado.style.borderRadius = '50px'
                             resultado.style.padding = '30px'
 
                         } else if(sol && medicinal){
+                            img.src = 'pata de vaca.png'
+                            img.style.display = 'block'
+
+
                             resultado.innerHTML = 'Planta sugerida: Pata de vaca'
                             resultado.style.background = 'pink'
                             resultado.style.borderRadius = '50px'
                             resultado.style.padding = '30px'
 
                         } else if(msombra && decoracao){
-                            resultado.innerHTML = 'Planta sugerida: Gerânio'
+                            img.src = 'geranio.png'
+                            img.style.display = 'block'
+
+
+                            resultado.innerHTML = 'Planta sugerida: Gerânio. Floresce quase o ano todo. Gosta de poucas regas e solo bem drenável.'
                             resultado.style.background = 'pink'
                             resultado.style.borderRadius = '50px'
                             resultado.style.padding = '30px'
 
                         }else if(sombra && decoracao){
+                            img.src = 'lirio.png'
+                            img.style.display = 'block'
+
+
                             resultado.innerHTML = 'Planta sugerida: Lírio da paz'
                             resultado.style.background = 'pink'
                             resultado.style.borderRadius = '50px'
                             resultado.style.padding = '30px'
                             
                         }  else  if(msombra && medicinal) {
+                            img.src = 'babosa.png'
+                            img.style.display ='block'
+
                             resultado.innerHTML = 'Planta sugerida: Babosa'
                             resultado.style.background = 'pink'
                             resultado.style.borderRadius = '50px'
                             resultado.style.padding = '30px'
 
                         }else if(msombra && cha){
+                            img.src = 'boldo.png'
+                            img.style.display = 'block'
+                            
+
                             resultado.innerHTML = 'Planta sugerida: Boldo'
                             resultado.style.background = 'pink'
                             resultado.style.borderRadius = '50px'
                             resultado.style.padding = '30px'
 
                         }else if(sombra && cha){
+                            img.src = 'erva.png'
+                            img.style.display = 'block'
+
                             resultado.innerHTML = 'Planta sugerida: Erva-cidreira'
                             resultado.style.background = 'pink'
                             resultado.style.borderRadius = '50px'
                             resultado.style.padding = '30px'
 
                         } else{
-                            resultado.innerHTML = 'Planta sugerida: Roseira'
+                            img.src = 'rosa.png'
+                            img.style.display = 'block'
+
+                            resultado.innerHTML = 'Planta sugerida: Roseira. Floresce quase o ano todo. gosta de poucas regas e bastante matéria orgãnica.'
                             resultado.style.background = 'pink'
                             resultado.style.borderRadius = '50px'
                             resultado.style.padding = '30px'
@@ -178,7 +234,7 @@
                     function modoEscuro(){
                         document.body.classList.toggle('dark') /* Pega o body da página */
 
-                        let botao = document.getElementById('btn') // Cria uma variável chamada botão
+                        var botao = document.getElementById('btn') // Cria uma variável chamada botão
 
                         if(document.body.classList.contains('dark')){ // Varifica: ä página no modo escuro?""
                             botao.innerHTML = 'Modo claro ☀️' // Muda o texto do botão para "modo claro"
@@ -189,6 +245,23 @@
                         }
 
                     }
+                
+                        
+                        
+            
+                    function mostrar(){
+                        var caixa = document.getElementById('conteudoSurpresa')
+                        caixa.style.display ='block'
+                        var img = document.getElementById('lantana')
+                        img.src = 'lantana.png'
+                        img.style.display = 'block'
+                        var msg = document.getElementById('msg')
+                        var botao = document.getElementById('botao')
+
+                        
+
+                    }
+                    
                     
                 /* A classe DARK no CSS muda o visual para modo escuro.
                 Fundo escuro + texto branco.*/

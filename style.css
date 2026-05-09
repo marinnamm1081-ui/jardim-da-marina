@@ -64,6 +64,28 @@ a{
     padding: 10px;
     margin: 8px;
 }
+img{
+    
+    width: 400px;
+    border-radius: 50px 50px ;
+    box-shadow: 5px 5px 10px rgba(10, 4, 8, 0.423);
+}
+
+    
+
+#botao{
+    
+    height: 10px;
+    padding-bottom: 40px;
+    padding-top: 10px;
+}
+#conteudoSurpresa{
+    display: none; 
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    
+}
 
 .container{
     width: 80%; /* Ele é usado para definir a LARGURA de um elemento (como uma div, imagem, botão, etc.. )*/
